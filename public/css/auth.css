@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color:#202225;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    font-family: monospace;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+a {
+    color:white;
+    text-decoration: none;
+    transition: 0.35s;
+    font-size: large;
+    padding: 5px;
+    border-radius: 100px;
+    margin-top: 100px;
+    margin:10px;
+    box-sizing: border-box;
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-end;
+}
+  
+  a:hover {
+    color: #5865F2;
+  }
+.master {
+    background-color:#202225 ;
+    width: 80%px;
+    height: 542px;
+    margin: 0 15px;
+    border-radius: 1rem;
+}
+
+.master h1 {
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px 5px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.master-register h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 10px 1px;
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+
+.master-register form .form-group {
+    position: relative;
+    width: 100%;
+    margin: 3px;
+}
+
+form .form-group {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+}
+
+form .form-group input {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 0.6rem;
+    border: 3px solid whitesmoke;
+    color: whitesmoke;
+    background-color: #202225;
+    font-size: 1rem;
+    border-radius: 1000px;
+    text-align: center;
+}
+
+form .form-group .captcha {
+        width: 30%;
+        padding: 1px 4px;
+        margin: 0px 110px;
+}
+
+button {
+width: 150px;
+height: 36px;
+padding: 0px;
+margin: 15px;
+background: #202225;
+border: none;
+border-radius: 100px;
+border: 3px whitesmoke solid;
+color: white;
+font-size: 15px;
+}
+
+.mt-10 {
+    margin: 20px;
+    top: -95px;
+     position: relative;
+    right: -206px;
+}
+
+.text-danger {
+    color: red;
+}
+
+
+    /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+ *  {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #202225;
+    border-radius: 15px;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 15px;
+    border: 3px solid #ffffff;
+    margin-right: 3px;
+  }
