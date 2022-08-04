@@ -1,162 +1,203 @@
-*{
+html {
+    font-size: 62.5%;
+}
+:root {
+    /* colors */
+
+    --backgound-default: #202225;
+    --primary: #5865f2;
+    --primary-dark: #3342e3;
+    --text-primary: #e2e2e2;
+    --error: rgb(206, 0, 0);
+
+    --border-primary: rgb(245, 245, 245);
+    /* colors */
+
+    /* font size */
+
+    --font-xs: 10px; /* 10px; */
+    --font-sm: 13px; /* 13px; */
+    --font-md: 16px; /* 16px; */
+    --font-lg: 20px; /* 20px; */
+    --font-xl: 26px; /* 32px; */
+    --font-xxl: 32px; /* 32px; */
+
+    /* font size */
+
+    /* border radius */
+
+    --border-xs: 1px;
+    --border-sm: 3px;
+    --border-md: 5px;
+    --border-lg: 10px;
+    --border-xl: 15px;
+
+    /* border radius */
+}
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color:#202225;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    font-family: monospace;
-    overflow-x: hidden;
-    overflow-y: auto;
+    background-color: var(--backgound-default);
 }
 a {
-    color:white;
-    text-decoration: none;
-    transition: 0.35s;
-    font-size: large;
-    padding: 5px;
-    border-radius: 100px;
-    margin-top: 100px;
-    margin:10px;
-    box-sizing: border-box;
-    appearance: auto;
-    writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
+    color: var(--text-primary);
     display: inline-block;
-    text-align: center;
-    align-items: flex-end;
+    text-decoration: none;
+    font-size: var(--font-sm);
+    transition: 0.35s;
 }
-  
-  a:hover {
-    color: #5865F2;
-  }
-.master {
-    background-color:#202225 ;
-    width: 80%px;
-    height: 542px;
-    margin: 0 15px;
+
+a:hover {
+    color: var(--primary);
+}
+
+/* ===== Shared Styles ===== */
+.master,
+.master-register {
+    background-color: var(--backgound-default);
     border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
 }
-
-.master h1 {
-    font-family: monospace;
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 20px;
-    padding: 10px 5px;
+.master form .form-group input,
+.master-register form .form-group input {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 2px solid var(--border-primary);
+    color: var(--text-primary);
+    background-color: var(--backgound-default);
+    font-size: var(--font-md);
+    border-radius: 10px;
     text-align: center;
-    color: whitesmoke;
 }
-
+.master form .form-group .captcha,
+.master-register form .form-group .captcha {
+    align-self: center;
+}
+.master .btn-submit,
+.master-register .btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.master .btn-submit button,
+.master-register .btn-submit button {
+    cursor: pointer;
+    border: none;
+    color: var(--text-primary);
+    background-color: var(--primary);
+    font-size: var(--font-md);
+    border-radius: var(--border-xl);
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 180px;
+    align-self: center;
+    transition: background-color 0.35s ease;
+}
+.master .btn-submit button:hover,
+.master-register .btn-submit button:hover {
+    background-color: var(--primary-dark);
+}
+.master .text-danger,
+.master-register .text-danger {
+    color: var(--error);
+    font-size: var(--font-sm);
+}
+.master h1,
 .master-register h1 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 25px;
-    padding: 10px 1px;
-    text-align: center;
-    color: whitesmoke;
-
+    font-size: var(--font-xl);
+    color: var(--text-primary);
+    line-height: 30px;
 }
+/* ===== Shared Styles ===== */
 
-form {
+/* ===== Login Styles ===== */
+
+.master form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 10px;
+    margin: 2rem;
+    gap: 1.5rem;
+    max-width: 600px;
+    width: 100%;
 }
+.master form .form-group {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    gap: 1rem;
+}
+/* ===== Login Styles ===== */
 
+/* ===== Register Styles ===== */
+.master-register form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    gap: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    justify-content: center;
+}
 .master-register form .form-group {
-    position: relative;
     width: 100%;
-    margin: 3px;
+    max-width: 250px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+/* ===== Register Styles ===== */
+
+/* ===== Reset Password ===== */
+
+.mb-10 {
+    font-size: var(--font-sm);
 }
 
-form .form-group {
-    position: relative;
-    width: 100%;
-    margin: 10px;
-}
+/* ===== Reset Password ===== */
 
-form .form-group input {
-    display: block;
-    width: 100%;
-    outline: none;
-    padding: 0.6rem;
-    border: 3px solid whitesmoke;
-    color: whitesmoke;
-    background-color: #202225;
-    font-size: 1rem;
-    border-radius: 1000px;
-    text-align: center;
-}
-
-form .form-group .captcha {
-        width: 30%;
-        padding: 1px 4px;
-        margin: 0px 110px;
-}
-
-button {
-width: 150px;
-height: 36px;
-padding: 0px;
-margin: 15px;
-background: #202225;
-border: none;
-border-radius: 100px;
-border: 3px whitesmoke solid;
-color: white;
-font-size: 15px;
-}
-
-.mt-10 {
-    margin: 20px;
-    top: -95px;
-     position: relative;
-    right: -206px;
-}
-
-.text-danger {
-    color: red;
-}
-
-
-    /* ===== Scrollbar CSS ===== */
-  /* Firefox */
- *  {
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
     scrollbar-width: auto;
-    scrollbar-color: #ffffff #ffffff;
-  }
+    scrollbar-color: var(--border-primary) var(--border-primary);
+}
 
-  /* Chrome, Edge, and Safari */
-  ::-webkit-scrollbar {
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
     width: 10px;
-  }
+}
 
-  ::-webkit-scrollbar-track {
-    background: #202225;
-    border-radius: 15px;
+::-webkit-scrollbar-track {
+    background: var(--backgound-default);
+    border-radius: var(--border-xl);
+}
 
-  }
-
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: transparent;
-    border-radius: 15px;
-    border: 3px solid #ffffff;
+    border-radius: var(--border-xl);
+    border: 3px solid var(--border-primary);
     margin-right: 3px;
-  }
+}
+/* ===== Scrollbar CSS ===== */
