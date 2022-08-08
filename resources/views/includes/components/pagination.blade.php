@@ -3,7 +3,7 @@
 @endphp
 
 @if($paginator->hasPages())
-	<div class="bar" style="border: none">
+	<div class="bar flex-row overflow-x-scroll" style="border: none">
         @if($paginator->onFirstPage())
         	<span>First</span>
        	@else

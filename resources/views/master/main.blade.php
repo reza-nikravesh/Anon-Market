@@ -13,16 +13,16 @@
 	@hasSection('no-content')
 		@yield('no-content')
 	@else
-	<main>
-		<div style="text-align: center; background: #2F313; color: red;font-size:bigger; padding-top:5px;">
-			@include('includes.components.alertjavascript')
-		</div>
-		@include('includes.components.navbar')
-        <div class="content">
-         	@yield('content')
-		</div>
-		@include('includes.components.footer')
+	<div class="js-alert description">
+		@include('includes.components.alertjavascript')
+	</div>
+	@include('includes.components.navbar')
+	<main class="relative bottom-space ">
+         	<div class="content w-full m-auto flex-row">
+			 @yield('content')
+			</div>
 	</main>
+	@include('includes.components.footer')
 	@endif
 </body>
 </html>

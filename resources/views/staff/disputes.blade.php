@@ -2,16 +2,17 @@
 
 @section('title', 'Staff disputes')
 
+@include('includes.flash.success')
+@include('includes.flash.error')
 @section('content')
 
 @include('includes.components.menustaff')
 <div class="content-profile">
-	@include('includes.flash.success')
-	@include('includes.flash.error')
-	<div class="h3">All disputes ({{ $disputes->count() }})</div>
-	<table class="zebra mt-10" style="width: 100%; text-align: center">
+	<div class="title text-primary">All disputes ({{ $disputes->count() }})</div>
+	<div class="flex-row overflow-x-scroll">
+		<table class="zebra mt-10" >
 		<thead>
-			<tr>
+			<tr class="subtitle-sm text-secondary">
 				<th>Product</th>
 				<th>Seller</th>
 				<th>Buyer</th>
@@ -19,7 +20,7 @@
 				<th>UUID</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="description">
 			@forelse($disputes as $dispute)
 			<tr>
 				<td><a href="{{ route('product', ['product' => $dispute->product->id]) }}">{{ $dispute->product->name }}</a></td>
@@ -38,6 +39,8 @@
 			</tr>
 		</tbody>
 	</table>
+	</div>
+	
 </div>
 
 @stop

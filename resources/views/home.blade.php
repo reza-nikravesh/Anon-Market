@@ -4,11 +4,11 @@
 
 @section('content')
 
-<div class="content-sidebar">
+<div class="content-sidebar bottom-space" >
 	@include('includes.components.notices')
 	@include('includes.components.yoursellers')
 </div>
-<div class="content-homepage">
+<div class="content-homepage  ">
 	@foreach($featuredProducts as $featuredProduct)
 		@include('includes.components.product.featured', ['product' => $featuredProduct])
 	@endforeach

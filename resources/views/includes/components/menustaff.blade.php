@@ -1,6 +1,6 @@
 <div class="content-sidebar">
     <div class="notices">
-        <span class="notices-header">Staff links</span>
+        <span class="subtitle text-primary">Staff links</span>
         <ul class="notices-list">
             <li><a href="{{ route('staff.products') }}">Products</a></li>
             <li><a href="{{ route('staff.disputes') }}">Disputes</a></li>
@@ -11,7 +11,7 @@
         </ul>
         @admin
         <br>
-        <span class="notices-header">Admin links</span>
+        <span class="subtitle text-primary">Admin links</span>
         <ul class="notices-list">
             <li><a href="{{ route('admin.dashboard') }}">Market settings</a></li>
             <li><a href="{{ route('admin.users') }}">Users</a></li>

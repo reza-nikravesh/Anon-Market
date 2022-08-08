@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="content-browsing">
-   <div class="container about">
+   <div class="container  ">
    		<div class="h3">{{ $notice->title }}</div>
 		{!! Illuminate\Support\Str::markdown(strip_tags($notice->notice)) !!}
 	   <div class="h3">

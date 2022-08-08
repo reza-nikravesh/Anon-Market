@@ -1,6 +1,6 @@
 <div class="content-sidebar">
     <div class="notices">
-        <span class="notices-header">Account links</span>
+        <span class="notices-header subtitle">Account links</span>
         <ul class="notices-list">
             <li><a href="{{ route('accountindex') }}">Account index</a></li>
             <li><a href="{{ route('statistics') }}">Account statistics</a></li>

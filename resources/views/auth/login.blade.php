@@ -13,21 +13,27 @@
     <form action="{{ route('post.login') }}" method="post">
         @csrf
         <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Username">
-            @error('username')
-            <div class="error">
-                <small class="text-danger">{{ $errors->first('username') }}</small>
+            <div class="input-container">
+                <input type="text" id="username" name="username" placeholder="Username">
+                @error('username')
+                <div class="error">
+                    <small class="text-danger">{{ $errors->first('username') }}</small>
+                </div>
+                @enderror
             </div>
-            @enderror
+
         </div>
         <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Password">
-            @error('password')
-            <div class="error">
-                <small class="text-danger">{{ $errors->first('password') }}</small>
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Password">
+                @error('password')
+                <div class="error">
+                    <small class="text-danger">{{ $errors->first('password') }}</small>
+                </div>
+                @enderror
             </div>
-            @enderror
-            <a style=margin-top:5px !important; href="{{ route('resetpassword') }}">Forgot password?</a>
+
+            <a class="mt-10" href="{{ route('resetpassword') }}">Forgot password?</a>
         </div>
         @include('includes.forms.captcha')
         <div>

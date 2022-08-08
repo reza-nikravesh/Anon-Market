@@ -5,11 +5,14 @@
 @section('content')
 
 <div class="content-browsing">
-	<div class="h3 mb-10">Favorite listings</div>
+	<div class="subtitle mb-10">Favorite listings . </div>
+    <div class="flex-row justify-center">
     @forelse($favorites as $favorite)
     	@include('includes.components.product.row', ['product' => $favorite->product])
     @empty
-    	<div class="h3 mt-20" style="text-align: center">Looks like you don't have any products in your favorites yet!</div>
+    </div>
+    <br>
+    	<div class="subtitle mt-20" >Looks like you don't have any products in your favorites yet!</div>
     @endforelse
     {{ $favorites->links('includes.components.pagination') }}
 </div>

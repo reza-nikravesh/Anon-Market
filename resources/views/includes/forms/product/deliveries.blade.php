@@ -2,9 +2,10 @@
 
 @section('product-form')
 
-<div class="h3 mt-10">Product delivery methods</div>
-<table class="zebra table-space">
-	<thead>
+<div class="subtitle text-primary mt-10">Product delivery methods</div>
+<div class="flex-row overflow-x-scroll">
+	<table class="zebra table-space">
+	<thead class="subtitle-sm text-secondary">
 		<tr>
 			<th>name</th>
 			<th>number of days</th>
@@ -13,7 +14,7 @@
 			<th>#</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="description">
 		@if($section == 'edit')
 			@forelse($product->deliveries as $delivery)
 			<tr>
@@ -24,7 +25,7 @@
 				<td>
 					<form action="{{ route('post.deletedelivery', ['section' => $section, 'delivery' => $delivery->id, 'product' => $product->id]) }}" method="post">
 						@csrf
-						<button type="submit" class="text-danger">delete</button>
+						<button class="mt-10 mb-10" type="submit" class="text-danger">delete</button>
 					</form>
 				</td>
 			</tr>
@@ -54,47 +55,51 @@
 			@endforelse
 		@endif
 	</tbody>
-</table>
+</table>	
+	</div>
+
 <div class="container mt-20">
 	<form action="{{ $section == 'edit' ? route('post.delivery', ['section' => $section, 'product' => $product->id]) : route('post.delivery', ['section' => 'add']) }}" method="post">
 		@csrf
 		<div class="form-group">
-			<div class="label">
-				<label for="name">Name</label>
-			</div>
+			<div class="input-container">
+					<label for="name">Name</label>
 			<input type="text" id="name" name="name" placeholder="ex. world wide" maxlength="10">
-			@error('name')
+			
+			</div>@error('name')
 			<div class="error">
-				<small class="text-danger">{{ $errors->first('name') }}</small>
+				<span class="text-danger mt-10 description">{{ $errors->first('name') }}</span>
 			</div>
 			@enderror
 		</div>
 		<div class="form-group">
-			<div class="label">
-				<label for="days">Days</label>
-			</div>
+			<div class="input-container">
+					<label for="days">Days</label>
 			<input type="text" id="days" name="days" placeholder="max 30 days" maxlength="2">
-			@error('days')
+			
+			</div>@error('days')
 			<div class="error">
-				<small class="text-danger">{{ $errors->first('days') }}</small>
+				<span class="text-danger mt-10 description">{{ $errors->first('days') }}</span>
 			</div>
 			@enderror
 		</div>
 		<div class="form-group">
-			<div class="label">
-				<label for="price">Price</label>
-			</div>
+			<div class="input-container">
+					<label for="price">Price</label>
 			<input type="text" id="price" name="price" placeholder="max $999.999" maxlength="6">
-			@error('price')
+			
+			</div>@error('price')
 			<div class="error">
-				<small class="text-danger">{{ $errors->first('price') }}</small>
+				<span class="text-danger mt-10 description">{{ $errors->first('price') }}</span>
 			</div>
 			@enderror
 		</div>
-		<button type="submit">Add delivery method</button>
+		<button class="mt-10" type="submit">Add delivery method</button>
 	</form>
 </div>
+<div class="flex-row">
 <a href="{{ $section == 'edit' ? route('offers', ['section' => $section, 'product' => $product->id]) : route('offers', ['section' => 'add']) }}" class="h3">back</a>
 <a href="{{ $section == 'edit' ? route('informations', ['section' => $section, 'product' => $product->id]) : route('informations', ['section' => 'add']) }}" class="h3 float-right">next step</a>
 
+</div>
 @stop

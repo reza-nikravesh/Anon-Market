@@ -1,15 +1,17 @@
 <div class="form-group">
-    <div class="captcha" style=margin-bottom:5px;>
+    <div class="captcha mb-10">
         {!! Captcha::img() !!}
     </div>
-    <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha">
-    @error('captcha')
-    <div class="error">
-        <small class="text-danger">{{ $errors->first('captcha') }}</small>
+    <div class="input-container ">
+        <input class="mb-10" type="text" id="captcha" name="captcha" placeholder="Enter Captcha">
+        @error('captcha')
+        <div class="error mb-10">
+            <small class="text-danger description">{{ $errors->first('captcha') }}</small>
+        </div>
+        @enderror
     </div>
-    @enderror
     <div class='btn-submit'>
-        <button type="submit" >Go</button>
-       
+        <button type="submit">Go</button>
+
     </div>
 </div>

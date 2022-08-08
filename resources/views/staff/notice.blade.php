@@ -9,7 +9,7 @@
 	@include('includes.flash.success')
 	@include('includes.flash.error')
 	<div class="h3 mb-20">Notice: {{ $notice->title }}</div>
-	<div style="width: 61%">
+	<div >
 		<form action="{{ route('put.staff.editnotice', ['notice' => $notice->id]) }}" method="post" class="mb-40">
 			@csrf
 			@method('PUT')
@@ -17,7 +17,7 @@
 				<div class="label">
 					<label for="title">title</label>
 				</div>
-				<input type="text" id="title" name="title" style="width: 50%" maxlength="50" value="{{ $notice->title }}">
+				<input type="text" id="title" name="title"  maxlength="50" value="{{ $notice->title }}">
 				<div class="error">
 					@error('title')
 					<small class="text-danger">{{ $errors->first('title') }}</small>

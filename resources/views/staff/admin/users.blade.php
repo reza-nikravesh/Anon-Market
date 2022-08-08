@@ -7,13 +7,14 @@
 @include('includes.components.menustaff')
 
 <div class="content-profile">
-	<div class="h3">All users ({{ $totalUsers }})</div>
-	<form action="{{ route('admin.users', ['username' => $username, 'role' => $role]) }}" method="GET" class="mt-10">
-		<div class="inblock">
+	<div class="title text-primary">All users ({{ $totalUsers }})</div>
+	<form   action="{{ route('admin.users', ['username' => $username, 'role' => $role]) }}" method="GET" class="mt-10">
+		<div class="input-container w-50">
 			<label for="username">username:</label>
 			<input type="text" id="username" name="username" value="{{ $username }}">
 		</div>
-		<div class="inblock">
+		<div >
+			<div class="input-container mt-10">
 			<label for="role">role</label>
 			<select id="role" name="role" class="dropdown-wrapper">
 				<option value="all" @if($role == 'all') selected @endif>all</option>
@@ -21,14 +22,14 @@
 				<option value="moderator" @if($role == 'moderator') selected @endif>moderator</option>
 				<option value="admin" @if($role == 'admin') selected @endif>admin</option>
 			</select>
+			</div>
 		</div>
-		<div class="inblock">
-			<button type="submit">filter</button>
-		</div>
+			<button class="mt-10" type="submit">filter</button>
 	</form>
-	<table class="zebra mt-10" style="width: 100%; text-align: center">
-		<thead>
-			<tr>
+	<div class="flex-row overflow-x-scroll">
+		<table class="zebra mt-10 text-center" >
+		<thead class="subtitle-sm text-secondary">
+			<tr >
 				<th>username</th>
 				<th>seller</th>
 				<th>moderator</th>
@@ -38,7 +39,7 @@
 				<th>#</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="description">
 			@forelse($users as $user)
 			<tr>
 				<td>{{ $user->username }}</td>
@@ -47,7 +48,7 @@
 				<td><strong>{{ $user->isAdmin() ? 'Yes' : 'No' }}</strong></td>
 				<td>{{ $user->lastLogin() }}</td>
 				<td>{{ $user->totalOrdersCompleted() }}</td>
-				<td><button><a href="{{ route('admin.user', ['user' => $user->id]) }}" class="button">·dit user</a></button></td>
+				<td><button><a href="{{ route('admin.user', ['user' => $user->id]) }}" class="button">edit user</a></button></td>
 			</tr>
 			@empty
 			<tr>
@@ -59,6 +60,8 @@
 			</tr>
 		</tbody>
 	</table>
+	</div>
+	
 </div>
 
 @stop

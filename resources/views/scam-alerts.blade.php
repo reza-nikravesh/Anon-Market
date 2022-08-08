@@ -5,10 +5,10 @@
 @section('content')
 
 <div class="content-browsing">
-   <div class="container about">
-      <p class="h3">Scam Alerts</p>
+   <div class="container w-full m-auto  ">
+      <p class="subtitle">Scam Alerts</p>
 
-      <p><i>No alerts yet!!! Notify us immediately if you encounter any scam attempt.</i></p>
+      <p class="description"><i>No alerts yet!!! Notify us immediately if you encounter any scam attempt.</i></p>
    </div>
 </div>
 

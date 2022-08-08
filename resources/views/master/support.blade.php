@@ -2,65 +2,70 @@
 
 @section('title', 'Support')
 
+@include('includes.flash.validation')
+@include('includes.flash.error')
+
 @section('content')
 
-<div class="content-browsing">
-	@include('includes.flash.validation')
-	@include('includes.flash.error')
-	<div class="content-sidebar" style="width:320px;">
-		<div class="footnote">Help requests marked as closed are automatically deleted in 30 days!</div>
-	    <table class="zebra" style="width: 100%">
-	        <thead>
-	            <tr>
-	                <th>title</th>
-	                <th>status</th>
-	                <th>#</th>
-	            </tr>
-	        </thead>
-	        <tbody>
-	            @forelse($helpRequests as $helpRequest)
-	            <tr>
-	                <td>{{ $helpRequest->decryptTitle() }}</td>
-	                <td><strong>{{ $helpRequest->status() }}</strong></td>
-	                <td><a href="{{ route('helprequest', ['helpRequest' => $helpRequest->id]) }}">view</a></td>
-	            </tr>
-	            @empty
-	            <tr>
-	            	<td colspan="3">You haven't asked for any help yet!</td>
-	            </tr>
-	            @endforelse
-	            <tr>
-	            	<td colspan="3">{{ $helpRequests->links('includes.components.pagination') }}</td>
-	            </tr>
-	        </tbody>
-	    </table>
+<div class=" m-auto">
+    <div class="flex-column">
+        <div class="title text-primary mb-10">Support</div>
+        <div class="subtitle text-primary mb-10">Create help request</div>
+        <form action="{{ route('post.createhelprequest') }}" method="post">
+            @csrf
+            <div class="input-container mb-10">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="info-wrapper inblock">
+                <div class="info-folder">
+                    <div class="info-icon">?</div>
+                    <div class="info-message">If you have any questions, please contact the team! You can only have one
+                        help request open at a time.</div>
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="message">Message</label>
+                <textarea id="message" name="message"></textarea>
+
+            </div>
+            <div class="  mt-10">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="flex-column mt-10">
+        <div class="description">Help requests marked as closed are automatically deleted in 30 days!</div>
+        <div class="flex-row overflow-x-scroll">
+		  <table class="zebra table-space mt-10">
+            <thead>
+                <tr class="subtitle text-secondary">
+                    <th>title</th>
+                    <th>status</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody class="description">
+                @forelse($helpRequests as $helpRequest)
+                <tr class="description">
+                    <td>{{ $helpRequest->decryptTitle() }}</td>
+                    <td><strong>{{ $helpRequest->status() }}</strong></td>
+                    <td><a href="{{ route('helprequest', ['helpRequest' => $helpRequest->id]) }}">view</a></td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="3">You haven't asked for any help yet!</td>
+                </tr>
+                @endforelse
+                <tr>
+                    <td colspan="3">{{ $helpRequests->links('includes.components.pagination') }}</td>
+                </tr>
+            </tbody>
+        </table>
 	</div>
-	<div class="h2 mb-20">Support</div>
-	<div class="h3 mb-10">Create help request</div>
-	<form action="{{ route('post.createhelprequest') }}" method="post">
-		@csrf
-		<div class="form-group inblock">
-			<div class="label">
-				<label for="title">Title</label>
-			</div>
-			<input type="text" id="title" name="title">
-		</div>
-		<div class="info-wrapper inblock">
-			<div class="info-folder">
-				<div class="info-icon">?</div>
-				<div class="info-message">If you have any questions, please contact the team! You can only have one help request open at a time.</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="label">
-				<label for="message">Message</label>
-			</div>
-			<textarea id="message" name="message" rows="20" cols="50"></textarea>
-		</div>
-		<div class="form-group">
-			<button type="submit">Submit</button>
-		</div>
-	</form>
+      
+
+    </div>
 </div>
 
 @stop

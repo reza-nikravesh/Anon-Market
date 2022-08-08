@@ -11,7 +11,7 @@
 	@include('includes.flash.success')
 	@include('includes.flash.error')
 	<div class="h3">Edit {{ $category->name }} category</div>
-	<div class="container footnote mt-10">
+	<div class="container description mt-10">
 		<div class="h3">Comments</div>
 		<ul>
 			<li>The category name must be unique.</li>

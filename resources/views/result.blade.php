@@ -4,15 +4,18 @@
 
 @section('content')
 
-<div class="content-browsing">
-	@include('includes.components.filters')
-	<div class="h3 mb-10 mt-20">Search result</div>
-	@forelse($products as $product)
-		@include('includes.components.product.row', ['product' => $product])
-	@empty
-    	<div class="h3 mt-20" style="text-align: center">Hmm... We don't seem to find any results...</div>
-	@endforelse
-	{{ $products->appends($filters)->links('includes.components.pagination') }}
+<div class="flex-column m-auto">
+    @include('includes.components.filters')
+    <div class="title text-primary mb-10 mt-20">Search result</div>
+    <div class="flex-row ">
+        @forelse($products as $product)
+        @include('includes.components.product.row', ['product' => $product])
+        @empty
+        <div class="subtitle text-primary mt-20 text-center">Hmm... We don't seem to find any results...
+        </div>
+        @endforelse
+    </div>
+    {{ $products->appends($filters)->links('includes.components.pagination') }}
 </div>
 
 @stop

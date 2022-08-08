@@ -1,25 +1,26 @@
 @extends('master.main')
 
 @section('title', 'Staff support')
+@include('includes.flash.success')
+@include('includes.flash.error')
 
 @section('content')
 
 @include('includes.components.menustaff')
 <div class="content-profile">
-	@include('includes.flash.success')
-	@include('includes.flash.error')
-	<div class="h3 mb-10">All help requests ({{ $totalHelpRequests }})</div>
+	<div class="title text-primary">All help requests ({{ $totalHelpRequests }})</div>
 	<form action="{{ route('staff.support', ['status' => $status]) }}" method="get">
-		<label for="status">Status:</label>
+		<label class="subtitle-sm" for="status">Status:</label>
 		<select class="dropdown-wrapper" id="status" name="status">
 			<option value="closed">Closed</option>
 			<option value="open">Open</option>
 		</select>
 		<button type="submit">Filter</button>
 	</form>
-	<div class="footnote">Help requests marked as closed are automatically deleted in 30 days!</div>
-	<table class="zebra mt-10" style="width: 100%; text-align: center">
-		<thead>
+	<div class="description">Help requests marked as closed are automatically deleted in 30 days!</div>
+	<div class="flex-row overflow-x-scroll">
+		<table class="zebra mt-10"  >
+		<thead class="subtitle-sm text-secondary">
 			<tr>
 				<th>User</th>
 				<th>Title</th>
@@ -27,7 +28,7 @@
 				<th>#</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="description">
 			@forelse($helpRequests as $helpRequest)
 			<tr>
 				<td>{{ $helpRequest->user->username }}</td>
@@ -55,6 +56,8 @@
 			</tr>
 		</tbody>
 	</table>
+	</div>
+	
 </div>
 
 @stop

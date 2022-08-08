@@ -5,9 +5,9 @@
 @section('content')
 
 <div class="content-browsing">
-   <div class="container about">
-      <p class="h3">How to use this site.</p> 
-      <ul>
+   <div class="container w-full m-auto  ">
+      <p class="title text-primary">How to use this site.</p> 
+      <ul class="description list-style-disc list-indent">
         <li>
             Browse listings, and add your desired items to your cart.
          </li>

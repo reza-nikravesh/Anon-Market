@@ -22,10 +22,11 @@
 			@endif
 		</div>
 	</div>
-	<div class="inblock" style="width: 50%">
+	<div  >
 		@include('includes.components.buyerstats', ['user' => $user])
 	</div>
-	<div class="inblock" style="vertical-align: top">
+	 
+	<div class="flex-row overflow-x-scroll">
 		<table class="zebra">
 			<tr style="text-align: left">
 				<th colspan="2">UUID: {{ $order->id }}</th>
@@ -43,14 +44,17 @@
 				<td>{{ $order->delivery_method }}</td>
 			</tr>
 		</table>
-	</div>
+		</div>
+		
+ 
 	<div class="col mt-40">
 		<div class="title">
-			<div class="h3 inblock" style="width:63%">Order cycle</div>
-			<div class="h3 inblock">Delivery address</div>
+			<div  >Order cycle</div>
+			<div  >Delivery address</div>
 		</div>
-		<div class="inblock" style="vertical-align: top; width: 606px">
-			<table class="zebra" style="width: 100%">
+		<div  >
+		<div class="flex-row overflow-x-scroll">
+		<table class="zebra"  >
 				<tr>
 					<thead>
 						<th style="text-align: left">payment wallet
@@ -74,18 +78,20 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="container inblock mt-10">
-				<span class="browser @if($order->waiting()) active @endif">Waiting</span> ➜
-				<span class="browser @if($order->accepted()) active @endif">Shipped</span> ➜
-				<span class="browser @if($order->delivered()) active @endif">Delivered</span> 
+		</div>
+			
+			<div class="container   mt-10">
+				<span class=" @if($order->waiting()) active @endif">Waiting</span> ➜
+				<span class=" @if($order->accepted()) active @endif">Shipped</span> ➜
+				<span class=" @if($order->delivered()) active @endif">Delivered</span> 
 			</div>
-			<div class="container inblock mt-10">
-				<span class="browser @if($order->canceled()) active @endif">Canceled</span> 
+			<div class="container   mt-10">
+				<span class=" @if($order->canceled()) active @endif">Canceled</span> 
 			</div>
-			<div class="container inblock mt-10">
-				<span class="browser @if($order->disputed()) active @endif">In dispute</span> 
+			<div class="container   mt-10">
+				<span class=" @if($order->disputed()) active @endif">In dispute</span> 
 			</div>
-			<div class="footnote container mt-10">
+			<div class="description container mt-10">
 				<div class="h3 mb-10">Note</div>
 				@if($order->waiting())
 					@if($order->isBuyer())
@@ -159,7 +165,7 @@
 								<button type="submit">Start dispute</button>
 							</form>
 						</div>
-						<form action="{{ route('post.feedback', ['feedback' => $feedback->id]) }}" method="post" class="mt-20 text-default">
+						<form action="{{ route('post.feedback', ['feedback' => $feedback->id]) }}" method="post" class="mt-20 text-primary">
 							<div class="h3 mb-10">My feedback</div>
 							@csrf
 							<div class="form-group inblock">
@@ -215,7 +221,7 @@
 						<button type="submit">Mark</button>
 					</form>
 					@endif
-					<form action="{{ route('post.createdisputemessage', ['dispute' => $order->dispute->id]) }}" method="post" class="text-default">
+					<form action="{{ route('post.createdisputemessage', ['dispute' => $order->dispute->id]) }}" method="post" class="text-primary">
 						@csrf
 						<div class="h3 mb-10">Create new message</div>
 						<div class="form-group">
