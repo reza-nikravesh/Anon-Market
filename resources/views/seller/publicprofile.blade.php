@@ -25,7 +25,7 @@
     <div class="content-profile   flex-grow-1">
 
         <div class="title text-primary mb-10">{{ $seller->username }}</div>
-        <div>
+        <div class="mb-10">
             <img src="{{ $seller->avatar }}" width="114px" height="114px">
         </div>
         <div class="  box description">

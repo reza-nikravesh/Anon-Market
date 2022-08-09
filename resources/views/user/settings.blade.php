@@ -22,7 +22,7 @@
         <form action="{{ route('put.changeavatar') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <img src="{{ auth()->user()->avatar }}" width="96px" height="96px">
+            <img class="mb-10" src="{{ auth()->user()->avatar }}" width="96px" height="96px">
             <div class="form-group container">
                 <div class="input-container">
                     <label for="avatar">avatar</label>
@@ -60,7 +60,7 @@
                 <label for="new_password_confirmation">confirm new password</label>
                 <input type="password" id="new_password_confirmation" name="new_password_confirmation">
             </div>
-            <button type="submit">change password</button>
+            <button class="mt-10" type="submit">change password</button>
         </form>
     </div>
     <div class="container mb-20">

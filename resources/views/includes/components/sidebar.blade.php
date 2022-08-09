@@ -1,12 +1,18 @@
 <div class="hamburger-toggle ">
     <svg class="toggle-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">! Font Awesome Pro 6.1.2 by
-        @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright
-        2022 Fonticons, Inc.
         <path
             d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
     </svg>
-    <input type="checkbox" />
+    <input type="radio" class="toggle-on" name="toggle">
+    <!-- <input type="checkbox" /> -->
     <ul class="hamburger-menu  subtitle">
+        <li class="flex-row toggle-off">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                    d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+            </svg>
+            <input type="radio" class="toggle-off" checked="checked" name="toggle">
+        </li>
         <a class="  " href="{{ route('home') }}">
             <li class="flex-row">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -59,7 +65,7 @@
         @staff
         <a class="  " href="{{ route('orders', ['status' => 'all']) }}">
             <li class="flex-row">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path
                         d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z" />
                 </svg>
@@ -80,7 +86,7 @@
         @seller
         <a class="  " href="{{ route('sales', ['status' => 'all']) }}">
             <li class="flex-row">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path
                         d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z" />
                 </svg>

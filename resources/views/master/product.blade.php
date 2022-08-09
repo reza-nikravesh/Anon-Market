@@ -8,7 +8,7 @@
 
 <div class="content-master m-auto flex-row w-full">
 
-    <div class="flex-colimn overflow-x-scroll">
+    <div class="flex-colimn carrousel-container overflow-x-scroll">
         <div class="carrousel  ">
             @foreach($product->images as $index => $image)
             <div id="image{{ $index }}" class="slide">
@@ -16,7 +16,7 @@
             </div>
             @endforeach
         </div>
-        <div class="mt-10 flex-row border">
+        <div class="mt-10 flex-row ">
             @foreach($product->images as $index => $image)
             <div class=" ">
                 <a href="#image{{ $index }}"><img src="{{ $image->image }}" alt="{{ $product->name }}" width="72px"
@@ -41,9 +41,11 @@
                 Finalize early (present):
                 <strong>{{ $product->seller->finalizeEarly() == true ? 'Yes' : 'No' }}</strong>
             </p>
-            category: @foreach($product->category->parents() as $pc) <a
-                href="{{ route('category', ['slug' => $pc->slug]) }}">{{ $pc->name }}</a> ➜ @endforeach <a
-                href="{{ route('category', ['slug' => $product->category->slug]) }}">{{ $product->category->name }}</a>
+            <p>
+                category: @foreach($product->category->parents() as $pc) <a
+                    href="{{ route('category', ['slug' => $pc->slug]) }}">{{ $pc->name }}</a> ➜ @endforeach <a
+                    href="{{ route('category', ['slug' => $product->category->slug]) }}">{{ $product->category->name }}</a>
+            </p>
             <form action="{{ route('post.favorites', ['product' => $product->id]) }}" method="post" class="mt-10">
                 @csrf
                 <button type="submit">{{ auth()->user()->isFavorite($product) ? 'Remove' : 'Add' }} to
@@ -83,13 +85,15 @@
             </form>
         </div>
     </div>
-    <div class="container mt-40">
-        <div class="subtitle text-primary">Description</div>
-        <div class="description">{!! Illuminate\Support\Str::markdown(strip_tags($product->description)) !!}</div>
-    </div>
-    <div class="container mt-40">
-        <div class="subtitle text-primary">Refund policy</div>
-        <div class="description">{!! Illuminate\Support\Str::markdown(strip_tags($product->refund_policy)) !!}</div>
+    <div>
+        <div class="container mt-40">
+            <div class="subtitle text-primary">Description</div>
+            <div class="description">{!! Illuminate\Support\Str::markdown(strip_tags($product->description)) !!}</div>
+        </div>
+        <div class="container mt-40">
+            <div class="subtitle text-primary">Refund policy</div>
+            <div class="description">{!! Illuminate\Support\Str::markdown(strip_tags($product->refund_policy)) !!}</div>
+        </div>
     </div>
     <div class="w-full">
         <div class="subtitle text-primary mt-40">Customer reviews</div>

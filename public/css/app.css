@@ -1,7 +1,5 @@
 @import url(./global.css);
 
-
-
 .two-factor {
     color: var(--text-secondary);
     background: var(--backgound-paper);
@@ -250,16 +248,14 @@ header {
 .hamburger-toggle {
     position: relative;
     margin-left: 2rem;
-    z-index: 7;
 }
 .hamburger-toggle .toggle-ic {
     position: relative;
     width: 25px;
     height: 25px;
-    z-index: 7;
     fill: var(--primary);
 }
-.hamburger-toggle > input {
+.hamburger-toggle > input.toggle-on {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -268,8 +264,26 @@ header {
     z-index: 8;
     opacity: 0;
 }
-.hamburger-toggle > input:checked + .hamburger-menu {
+.hamburger-toggle > input.toggle-on:checked + .hamburger-menu {
     transform: translateX(0);
+}
+.hamburger-toggle > input.toggle-on:not(:checked )+ .hamburger-menu {
+    transform: translateX(-110%);
+}
+.toggle-off{
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    width: 25px;
+    height: 25px;
+}
+.toggle-off input{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }
 /* .hamburger-toggle  input:checked  .toggle-ic {
     fill: var(--text-primary);
@@ -277,16 +291,18 @@ header {
 .hamburger-menu {
     transition: all 0.5s ease;
     padding-top: 15rem;
-    z-index: 0;
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 100vh;
+    max-height: 100vh;
     max-width: 300px;
     background-color: var(--backgound-paper);
     box-shadow: 5px 0 12px 5px rgb(43 43 43);
-    transform: translateX(-100%);
+    transform: translateX(-110%);
+    overflow-y: scroll;
 }
 .hamburger-menu a {
     border-radius: var(--border-md);
@@ -308,11 +324,9 @@ header {
     fill: var(--primary);
 }
 
-
 ::-webkit-scrollbar {
     /* display: none; */
 }
- 
 
 .auth-header {
     margin: auto;
@@ -580,7 +594,6 @@ header {
     text-align: right;
 }
 
-
 .carrousel {
     border-radius: 0;
     white-space: nowrap;
@@ -588,11 +601,14 @@ header {
     height: 300px;
     display: flex;
     overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-x: scroll;
     border: 1px solid var(--border-secondary);
 }
-.carrousel img{
+.carrousel img {
     object-fit: cover;
+}
+.carrousel-container {
+    max-width: 400px;
 }
 
 .slide {
@@ -737,7 +753,6 @@ header {
 .subcategory-link {
     margin-left: 20px;
 }
-
 
 /* media queriy for hide side bar */
 @media only screen and (min-width: 1000px) {

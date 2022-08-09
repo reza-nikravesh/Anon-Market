@@ -48,7 +48,7 @@
 				<td><strong>{{ $user->isAdmin() ? 'Yes' : 'No' }}</strong></td>
 				<td>{{ $user->lastLogin() }}</td>
 				<td>{{ $user->totalOrdersCompleted() }}</td>
-				<td><button><a href="{{ route('admin.user', ['user' => $user->id]) }}" class="button">edit user</a></button></td>
+				<td><a href="{{ route('admin.user', ['user' => $user->id]) }}">edit user</a></td>
 			</tr>
 			@empty
 			<tr>
