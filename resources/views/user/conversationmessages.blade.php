@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="content-profile w-full m-auto">
+<div class="content-profile w-full container-sm m-auto">
     <div class="title text-primary mb-20">Messages exchanged with {{ $conversation->otherUser() }}</div>
     <form action="{{ route('post.conversationmessages', ['conversation' => $conversation->id]) }}" method="POST">
         @csrf

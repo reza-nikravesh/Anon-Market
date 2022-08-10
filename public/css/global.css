@@ -17,7 +17,7 @@
 
     --success-veryLight: #e6f2e6;
 
-    --warning:#ffa900;
+    --warning: #ffa900;
 
     --border-primary: rgb(255, 255, 255);
     --border-secondary: #aaa;
@@ -37,10 +37,10 @@
 
     /* border radius */
 
-    --screen-sm: 480;
-    --screen-md: 860;
-    --screen-lg: 1000;
-    --screen-xl: 1440;
+    --screen-sm: 480px;
+    --screen-md: 860px;
+    --screen-lg: 1000px;
+    --screen-xl: 1440px;
 }
 .border {
     border: 2px solid red;
@@ -57,6 +57,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
+    marker: none;
 }
 a {
     color: var(--text-primary);
@@ -65,10 +66,10 @@ a {
     font-size: var(--font-sm);
     transition: 0.35s;
 }
-table{
+table {
     flex-shrink: 0;
 }
-table a:hover{
+table a:hover {
     color: initial;
 }
 textarea {
@@ -126,9 +127,8 @@ a:hover {
     scrollbar-color: var(--border-primary) var(--border-primary);
 }
 
-main >div:nth-child(2){
+main > div:nth-child(2) {
     flex-grow: 1;
-    
 }
 
 /* Chrome, Edge, and Safari */
@@ -198,6 +198,7 @@ main >div:nth-child(2){
     flex-direction: column;
     flex-wrap: wrap;
     gap: 1rem;
+    max-width: 400px;
 }
 .input-container label {
     font-size: var(--font-sm);
@@ -228,6 +229,11 @@ main >div:nth-child(2){
     flex-wrap: wrap;
     gap: 2rem;
 }
+.inline-flex-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -254,6 +260,15 @@ main >div:nth-child(2){
 .w-full {
     width: 90%;
     max-width: 1200px;
+}
+.container-lg {
+    max-width: var(--screen-lg);
+}
+.container-md {
+    max-width: var(--screen-md);
+}
+.container-sm {
+    max-width:var(--screen-sm);
 }
 .w-50 {
     width: 50%;
@@ -330,18 +345,18 @@ main >div:nth-child(2){
 .flex-grow-1 {
     flex-grow: 1;
 }
-.text-center{
+.text-center {
     text-align: center;
 }
-.ml-10{
+.ml-10 {
     margin-left: 1rem;
 }
-.text-error{
+.text-error {
     color: var(--error);
 }
-.border-error{
+.border-error {
     border-color: var(--error);
 }
-.border-light{
+.border-light {
     border-color: var(--border-secondary);
 }
