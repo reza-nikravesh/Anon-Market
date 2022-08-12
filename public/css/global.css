@@ -3,7 +3,7 @@
     --backgound-paper: #eee;
 
     --primary: #5865f2;
-    --primary-dark: #3342e3;
+    --primary-dark: #1220c1;
 
     --text-primary: #e2e2e2;
     --text-primary-dark: #c6c6c6;
@@ -34,6 +34,7 @@
     --border-md: 5px;
     --border-lg: 10px;
     --border-xl: 15px;
+    --border-xxl: 20px;
 
     /* border radius */
 
