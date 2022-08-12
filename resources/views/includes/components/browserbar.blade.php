@@ -6,7 +6,7 @@
     </form>
 </div>
 @endif
-<div class="container">
+<div class="container mb-10">
     <a
         href="{{ $section == 'edit' ? route('images', ['section' => $section, 'product' => $product->id]) : route('images', ['section' => 'add']) }}">Images</a>
     <a

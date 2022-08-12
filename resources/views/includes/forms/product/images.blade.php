@@ -7,7 +7,7 @@
     @if($section == 'edit')
     @forelse($product->images as $image)
     <div class="  mt-10">
-        <img src="{{ $image->image }}" width="128px" height="128px">
+        <img src="{{ $image->image }}" class="object-cover" width="128px" height="128px">
         <form
             action="{{ route('post.deleteimage', ['section' => $section, 'image' => $image->id, 'product' => $product->id]) }}"
             method="post">
@@ -21,7 +21,7 @@
     @else
     @forelse($images as $image)
     <div class="  mt-10">
-        <img src="{{ $image['image'] }}" width="128px" height="128px">
+        <img src="{{ $image['image'] }}" class="object-cover" width="128px" height="128px">
         <form action="{{ route('post.deleteimage', ['section' => 'add', 'image' => $image['uuid']]) }}" method="post">
             @csrf
             <button class="mt-10" type="submit" class="text-danger">delete</button>

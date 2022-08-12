@@ -7,7 +7,7 @@
 
 @section('content')
 
-<div class=" m-auto">
+<div class=" m-auto container-sm  ">
     <div class="flex-column">
         <div class="title text-primary mb-10">Support</div>
         <div class="subtitle text-primary mb-10">Create help request</div>
@@ -17,7 +17,7 @@
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title">
             </div>
-            <div class="info-wrapper inblock">
+            <div class="info-wrapper ">
                 <div class="info-folder">
                     <div class="info-icon">?</div>
                     <div class="info-message">If you have any questions, please contact the team! You can only have one
@@ -39,7 +39,7 @@
         <div class="flex-row overflow-x-scroll">
 		  <table class="zebra table-space mt-10">
             <thead>
-                <tr class="subtitle text-secondary">
+                <tr class="subtitle-sm text-secondary">
                     <th>title</th>
                     <th>status</th>
                     <th>#</th>

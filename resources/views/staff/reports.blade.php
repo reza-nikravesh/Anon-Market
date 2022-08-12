@@ -7,7 +7,7 @@
 @section('content')
 
 @include('includes.components.menustaff')
-<div class="content-profile">
+<div class="content-profile container-md">
     <div class="title text-primary">All reports ({{ $reports->count() }})</div>
     <div class="flex-row overflow-x-scroll">
         <table class="zebra mt-10">

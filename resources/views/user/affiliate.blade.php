@@ -7,7 +7,7 @@
 @include('includes.components.menuaccount')
 <div class="content-profile">
     <div class="title text-primary mb-15">Affiliate system</div>
-    <div class="flashdata flashdata-success mb-10 subtitle-sm">You were referenced by:
+    <div class="flashdata flashdata-success mb-10 subtitle-sm container-sm">You were referenced by:
         {{ !is_null($reference) ? $reference->username : 'no one'}}</div>
     <div class="container">
         <div class="  subtitle text-primary mb-10">Your referral link</div>

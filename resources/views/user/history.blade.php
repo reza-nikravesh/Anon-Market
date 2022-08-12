@@ -5,7 +5,7 @@
 @section('content')
 
 @include('includes.components.menuaccount')
-<div class="content-profile">
+<div class="content-profile container-md ">
     <div class="title text-primary mb-15">Account history</div>
     <div class="description">
         All transfers involving your receiving address will be recorded here. You can delete them at any time!

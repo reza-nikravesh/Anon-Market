@@ -5,7 +5,7 @@
 @section('content')
 
 @include('includes.components.menuaccount')
-<div class="content-profile ">
+<div class="content-profile w-full container-md ">
     <div class="title text-primary">Account statistics</div>
     @include('includes.components.buyerstats')
     <div class="description mt-10">These statistics are made available to your vendors when you purchase an item so they

@@ -7,7 +7,7 @@
 @section('content')
 
 @include('includes.components.menuaccount')
-<div class="content-profile w-full">
+<div class="content-profile container-md">
 
     <div class="title text-primary mb-15">Account Settings</div>
 
@@ -25,8 +25,8 @@
             <img class="mb-10" src="{{ auth()->user()->avatar }}" width="96px" height="96px">
             <div class="form-group container">
                 <div class="input-container">
-                    <label for="avatar">avatar</label>
-                    <input type="file" id="avatar" name="avatar">
+                    <label class="w-full" for="avatar">avatar</label>
+                    <input class="w-full" type="file" id="avatar" name="avatar">
                 </div>
                 <button class="mt-10" type="submit">change avatar</button>
             </div>

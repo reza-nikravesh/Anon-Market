@@ -2,7 +2,7 @@
 
 @section('product-form')
 
-<div class="mt-10 subtitle text-primary flashdata flashdata-error mt-15 mb-15">The product description and refund policy must
+<div class="mt-10 description text-primary flashdata flashdata-error mt-15 mb-15">The product description and refund policy must
     be a maximum of 5000 characters. Markdown is supported!</div>
 <div class="subtitle text-primary mt-10">Basic product information</div>
 <div class="container">

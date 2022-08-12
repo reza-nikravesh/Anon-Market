@@ -61,7 +61,7 @@
             @endstaff
 
             <a class="not-nav-link " href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512"><circle cx="255.998" cy="256" r="241.865" fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15"/><polyline fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15" points="26.142 315.91 134.235 315.91 134.235 135.721 254.925 284.841 371.965 135.721 371.965 315.91 485.854 315.91"/><polyline fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15" points="36.484 352.749 171.944 352.749 171.944 251.7 254.925 352.749 332.752 251.7 332.752 352.749 475.511 352.749"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M352 384h108.4C417 455.9 338.1 504 248 504S79 455.9 35.6 384H144V256.2L248 361l104-105v128zM88 336V128l159.4 159.4L408 128v208h74.8c8.5-25.1 13.2-52 13.2-80C496 119 385 8 248 8S0 119 0 256c0 28 4.6 54.9 13.2 80H88z"/></svg>
                 <div class="flex-row">
                     <span> =
                     </span>

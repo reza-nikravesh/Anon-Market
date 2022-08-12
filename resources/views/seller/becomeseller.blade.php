@@ -7,47 +7,48 @@
 @section('content')
 
 @include('includes.components.menuaccount')
-<div class="content-profile">
+<div class="content-profile container-md">
     <div class="title text-primary mb-15">Become a vendor</div>
     <div class="flex-row overflow-x-scroll">
-		 <table class="zebra table-space">
-        <thead>
-            <tr>
-                <th class="text-left">
-                    payment wallet
-                    <div class="info-wrapper float-right">
-                        <div class="info-folder">
-                            <div class="info-icon">?</div>
-                            <div class="info-message">The current fee to become a vendor is
-                                <strong>${{ config('general.seller_fee')}}</strong>. We will refund this amount to you
-                                in the future.
+        <table class="zebra table-space">
+            <thead class="subtitle-sm text-secondary">
+                <tr>
+                    <th class="text-left">
+                        <div class="flex-row items-center">
+                            <span>
+                                payment wallet
+                            </span>
+                            <div class="info-wrapper float-right">
+                                <div class="info-folder">
+                                    <div class="info-icon">?</div>
+                                    <div class="info-message">The current fee to become a vendor is
+                                        <strong>${{ config('general.seller_fee')}}</strong>. We will refund this amount to you
+                                        in the future.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </th>
-                <th>to pay</th>
-                <th>paid</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td  ><input type="text"
-                        value="89BCRn8nPCu6goAaRtEsGujZjj7M8ccosRWmZ4w5TXdDQszbccR3jkeNAc7sJMzE9iQm3moGX4LtFaLoGCnhdnkw8d1YfMS"
-                        disabled>
-                </td>
+                    </th>
+                    <th>to pay</th>
+                    <th>paid</th>
+                </tr>
+            </thead>
+            <tbody class="description">
+                <tr>
+                    <td><input type="text" value="89BCRn8nPCu6goAaRtEsGujZjj7M8ccosRWmZ4w5TXdDQszbccR3jkeNAc7sJMzE9iQm3moGX4LtFaLoGCnhdnkw8d1YfMS" disabled>
+                    </td>
+                    <td>
+                        XMR {{ $sellerFee }}
+                    </td>
+                    <td>
+                        <span class="flashdata flashdata-warning">{{ $user->paidSellerFee() ? 'Yes' : 'No' }}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-                <td>
-                    XMR {{ $sellerFee }}
-                </td>
-                <td>
-                    <span class="flashdata flashdata-warning">{{ $user->paidSellerFee() ? 'Yes' : 'No' }}</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-	</div>
-   
-    <p class="description mt-10">Get your products to your customers quickly, easily, and kosmosymously as an Kosmos
+    <p class="description mt-10 mb-10">Get your products to your customers quickly, easily, and kosmosymously as an Kosmos
         Market
         independent vendor.
     </p>
@@ -67,10 +68,13 @@
             <li>Remember, violating the rules here will result in your Vendor account being banned. <strong>Take your
                     job seriously!</strong></li>
         </ul>
-        <form action="{{ route('post.becomeseller') }}" method="post">
+        <form class="mt-10" action="{{ route('post.becomeseller') }}" method="post">
             @csrf
-            <input type="checkbox" id="terms" name="terms"> <small>I acknowledge that I have read and understood the
-                above policies and procedures in its entirety and agree to abide by them</small>
+            <div >
+                <span class="description">I acknowledge that I have read and understood the
+                    above policies and procedures in its entirety and agree to abide by them</span>
+                <input type="checkbox" id="terms" name="terms">
+            </div>
             <div class="mt-20 float-right">
                 <button type="submit">update account</button>
             </div>

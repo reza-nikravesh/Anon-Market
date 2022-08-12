@@ -6,7 +6,7 @@
 
 <div class="content-browsing">
 	<div class="subtitle mb-10">Favorite listings . </div>
-    <div class="flex-row justify-center">
+    <div class="flex-row ">
     @forelse($favorites as $favorite)
     	@include('includes.components.product.row', ['product' => $favorite->product])
     @empty

@@ -1,6 +1,6 @@
 <div class="product" >
 	<a href="{{ route('product', ['product' => $product->id]) }}" class="float-left">
-		<img src="{{ $product->featuredImage() }}" alt="No image" class="product-image" width="130px" height="135px">
+		<img src="{{ $product->featuredImage() }}" alt="No image" class="product-image-card" width="130px" height="135px">
 	</a>
 	
 	<div class="product-infos">

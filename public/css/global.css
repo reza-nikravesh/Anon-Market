@@ -37,6 +37,7 @@
 
     /* border radius */
 
+    --screen-xs: 300px;
     --screen-sm: 480px;
     --screen-md: 860px;
     --screen-lg: 1000px;
@@ -72,6 +73,13 @@ table {
 table a:hover {
     color: initial;
 }
+table .bar{
+    background-color: transparent;
+}
+table button:hover a{
+    color: var(--text-primary);
+    
+}
 textarea {
     width: 100%;
     max-width: 480px;
@@ -79,8 +87,7 @@ textarea {
     resize: none;
     outline: none;
     padding: 0.5rem;
-    border: 2px solid var(--border-secondary);
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     color: var(--text-primary);
     background-color: var(--backgound-default);
     font-size: var(--font-md);
@@ -103,6 +110,7 @@ button {
 button:hover {
     background-color: var(--primary);
     color: var(--text-primary);
+    font-weight: initial;
 }
 input {
     outline: none;
@@ -114,7 +122,10 @@ a {
     transition: 0.35s;
     font-size: var(--font-sm);
 }
-
+a.title {
+    font-size: inherit;
+    color: inherit;
+}
 a:hover {
     color: var(--text-primary);
     font-weight: bold;
@@ -153,7 +164,7 @@ main > div:nth-child(2) {
 .box {
     border-radius: var(--border-md);
     padding: 1rem 2rem;
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     display: flex;
 }
 .title {
@@ -218,7 +229,7 @@ main > div:nth-child(2) {
     min-width: 220px;
     height: 35px;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     color: var(--text-primary);
     background-color: var(--backgound-default);
     font-size: var(--font-md);
@@ -257,18 +268,28 @@ main > div:nth-child(2) {
 .justify-start {
     justify-content: flex-start;
 }
+.align-self-center {
+    align-self: center;
+}
 .w-full {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1600px;
 }
 .container-lg {
     max-width: var(--screen-lg);
+    width: 100%;
 }
 .container-md {
     max-width: var(--screen-md);
+    width: 100%;
 }
 .container-sm {
-    max-width:var(--screen-sm);
+    max-width: var(--screen-sm);
+    width: 100%;
+}
+.container-xs {
+    max-width: var(--screen-xs);
+    width: 100%;
 }
 .w-50 {
     width: 50%;
@@ -286,7 +307,7 @@ main > div:nth-child(2) {
     width: 400px;
 }
 .w-100 {
-    width: 100%;
+    max-width: 100%;
 }
 .list-indent {
     padding: 0 0 0 2rem;
@@ -359,4 +380,15 @@ main > div:nth-child(2) {
 }
 .border-light {
     border-color: var(--border-secondary);
+}
+.ic-md {
+    width: 25px;
+    height: 25px;
+}
+.ic-sm {
+    width: 16px;
+    height: 16px;
+}
+.object-cover {
+    object-fit: cover;
 }

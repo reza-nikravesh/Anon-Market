@@ -7,7 +7,7 @@
 @section('content')
 
 @include('includes.components.menustaff')
-<div class="content-profile">
+<div class="content-profile container-md">
 	<div class="title text-primary">All help requests ({{ $totalHelpRequests }})</div>
 	<form action="{{ route('staff.support', ['status' => $status]) }}" method="get">
 		<label class="subtitle-sm" for="status">Status:</label>

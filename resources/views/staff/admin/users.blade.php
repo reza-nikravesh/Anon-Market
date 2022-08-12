@@ -6,7 +6,7 @@
 
 @include('includes.components.menustaff')
 
-<div class="content-profile">
+<div class="content-profile container-md">
 	<div class="title text-primary">All users ({{ $totalUsers }})</div>
 	<form   action="{{ route('admin.users', ['username' => $username, 'role' => $role]) }}" method="GET" class="mt-10">
 		<div class="input-container w-50">

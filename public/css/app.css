@@ -49,7 +49,7 @@
 .alert {
     margin: 10px auto;
     padding: 10px;
-    border: 2px solid var(--error);
+    border: 1px solid var(--error);
     background-color: var(--error-veryLight);
     border-radius: 5px;
     font-size: var(--font-sm);
@@ -121,8 +121,6 @@ header {
     border-radius: var(--border-xl);
 }
 .nav-link:hover {
-    /* border: 2px solid var(--primary);
-    background-color: transparent; */
     transition: all 0.2s ease;
     transform: scale(1.2);
     margin: 0 0.5rem;
@@ -160,16 +158,16 @@ header {
 .content-homepage {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2rem;
-    /* flex-basis: 400px; */
 }
 .content-profile {
-     
     display: flex;
+    padding: 0 1rem;
     flex-direction: column;
+    margin: 0 auto;
 }
 .content-browsing {
+    margin: 0 1rem;
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
@@ -186,12 +184,6 @@ header {
     border-radius: var(--border-md);
     padding: 1rem;
 }
-/* .container form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    flex-wrap: wrap;
-} */
 .filter-result .subtitle-sm {
     color: var(--text-primary) !important;
 }
@@ -199,14 +191,14 @@ header {
 .info-wrapper {
     display: inline-block;
     position: relative;
-    height: 17px;
-    width: 17px;
+    height: 35px;
+    width: 35px;
 }
 
 .info-folder {
     position: absolute;
-    height: 17px;
-    width: 17px;
+    height: 15px;
+    width: 18px;
     border-radius: var(--border-lg);
     overflow: hidden;
 }
@@ -217,21 +209,14 @@ header {
     min-width: 200px;
     padding: 0;
 }
-.ic-md{
-    width: 25px;
-    height: 25px;
-}
-.ic-sm{
-    width: 16px;
-    height: 16px;
-}
+
 .info-icon {
     position: relative;
     background-color: var(--backgound-default);
     color: var(--text-primary);
     font-weight: bold;
     height: 15px;
-    width: 9px;
+    width: 15px;
     border: 1px solid var(--text-primary);
     border-radius: var(--border-lg);
     padding: 1px 4px;
@@ -247,7 +232,7 @@ header {
     color: var(--text-primary);
     font-weight: normal;
     text-align: left;
-    border: solid var(--border-primary) 1.5px;
+    border: 1px solid var(--border-primary);
     border-radius: var(--border-lg);
     padding: 5px;
     margin: 10px;
@@ -301,12 +286,9 @@ header {
     height: 100%;
     opacity: 0;
 }
-/* .hamburger-toggle  input:checked  .toggle-ic {
-    fill: var(--text-primary);
-} */
 .hamburger-menu {
     transition: all 0.5s ease;
-    padding-top: 15rem;
+    padding-top: 10rem;
     z-index: 5;
     position: fixed;
     top: 0;
@@ -530,7 +512,7 @@ header {
     font-size: var(--font-md);
     background: var(--backgound-default);
     border-color: var(--border-primary);
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     padding: 1rem;
     border-radius: var(--border-lg);
 }
@@ -538,14 +520,14 @@ header {
 .categories-body {
     padding: 1rem 2rem;
     border-radius: var(--border-xl);
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     background: var(--backgound-default);
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 .zebra {
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     border-radius: var(--border-md);
     color: var(--text-secondary);
 }
@@ -667,8 +649,8 @@ header {
     background-color: var(--warning);
 }
 .bar {
-    border: solid #ddd 1px;
-    background-color: #fff;
+    border: 1px solid var(--border-secondary) ;
+    background-color: var(--backgound-default);
     border-radius: 5px;
     margin: 0 0 15px 0;
     padding: 5px;
@@ -691,13 +673,18 @@ header {
     overflow: hidden;
     margin: 0 0 1.5rem 0;
 }
-
-.product-image {
+.product-image , .product-image-card {
     background-color: var(--backgound-paper);
-    width: 100%;
-    height: 130px;
     object-fit: cover;
     box-shadow: inset 5px 5px 5px #ddd;
+}
+.product-image{
+    width: 180px;
+    height: 120px;
+}
+.product-image-card{
+    width: 100%;
+    height: 120px;
 }
 
 .product-price {
@@ -738,9 +725,6 @@ header {
     height: 30px;
     padding: 4px 0;
     overflow: hidden;
-}
-
-.featured-listings-sidebar {
 }
 
 .featured-product-sidebar {

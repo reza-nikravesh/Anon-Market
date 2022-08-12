@@ -8,7 +8,7 @@
 	@include('includes.components.notices')
 	@include('includes.components.yoursellers')
 </div>
-<div class="content-homepage  ">
+<div class="content-homepage container-md ">
 	@foreach($featuredProducts as $featuredProduct)
 		@include('includes.components.product.featured', ['product' => $featuredProduct])
 	@endforeach

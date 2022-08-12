@@ -8,13 +8,12 @@
 
 @include('includes.components.menuaccount')
 <div class="content-profile">
-
-    <div class="container ">
+    <div class="container container-md">
         <div class="title text-primary">Useful information</div>
         <h3 class="description">These are some information you need to know about the market. Always refer to these
             notes before opening a help request.
         </h3>
-        <ul class=" description">
+        <ul class=" description list-style-disc list-indent">
             <li>If you place an order and do not pay within 2 days, the order is automatically canceled and any money
                 placed in the custody wallet is refunded.</li>
             <li>Orders marked as canceled or delivered will be deleted within 7 days.</li>
